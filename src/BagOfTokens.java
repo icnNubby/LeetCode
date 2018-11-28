@@ -38,8 +38,6 @@ public class BagOfTokens {
     
     public static void main(String[] args) {
     	int[]A = {42,10,26,22};
-    			
-
     	System.out.println(bagOfTokensScore(A, 	65));
     }
 }
