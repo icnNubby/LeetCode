@@ -1,13 +1,13 @@
-/**
-https://leetcode.com/problems/merge-two-binary-trees
- Definition for a binary tree node.*/
+// Definition for a binary tree node.
 class TreeNode {
      int val;
       TreeNode left;
       TreeNode right;
       TreeNode(int x) { val = x; }
   }
- 
+/**
+<a href = "https://leetcode.com/problems/merge-two-binary-trees"> Problem here. </a>
+*/
 public class MergeTwoBinaryTrees {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
         if (t1 == null && t2 != null) {

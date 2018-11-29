@@ -1,4 +1,6 @@
-//https://leetcode.com/problems/flipping-an-image/
+/**
+ * <a href = "https://leetcode.com/problems/flipping-an-image">Problem here.</a>
+ */
 
 public class FlippingAnImage {
     public static int invert(int bit)

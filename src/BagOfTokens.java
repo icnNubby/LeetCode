@@ -1,5 +1,8 @@
-//https://leetcode.com/problems/bag-of-tokens/
 import java.util.Arrays;
+/**
+ * <a href = "https://leetcode.com/problems/bag-of-tokens"> Problem here. </a>
+ */
+
 public class BagOfTokens {
     public static int bagOfTokensScore(int[] tokens, int P) {
 

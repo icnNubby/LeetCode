@@ -1,6 +1,7 @@
-// https://leetcode.com/problems/validate-stack-sequences/
-
 import java.util.Stack;
+/**
+ * <a href = "https://leetcode.com/problems/validate-stack-sequences/">Problem here.</a>
+ */
 
 public class ValidateStackSequences {
     public static boolean validateStackSequences(int[] pushed, int[] popped) {
