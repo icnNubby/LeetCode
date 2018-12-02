@@ -1,4 +1,4 @@
-import java.util.TreeSet;
+import java.util.HashSet;
 /**
  *<a href="https://leetcode.com/problems/fair-candy-swap/">Problem here. <a>
  * @author Nubby
@@ -8,7 +8,7 @@ public class FairCandySwap {
     public int[] fairCandySwap(int[] A, int[] B) {
     	long Asum = 0;
     	long Bsum = 0;
-    	TreeSet<Integer> set = new TreeSet<Integer>();
+    	HashSet<Integer> set = new HashSet<Integer>();
     	for(int i = 0; i < A.length; i++) {
     		Asum+=A[i];
     	}
