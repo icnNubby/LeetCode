@@ -1,5 +1,5 @@
 import java.util.Hashtable;
-import java.util.TreeSet;
+import java.util.HashSet;
 /**
  * <a href = "https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/"> Problem is here. </a>
  * <p>
@@ -20,8 +20,8 @@ public class XOfAKindInADeckOfCards {
 		return true;
 	}
 
-	private TreeSet<Integer> getAllPrimeDenominators(int number) {
-		TreeSet<Integer> allPrimes = new TreeSet<Integer>();
+	private HashSet<Integer> getAllPrimeDenominators(int number) {
+		HashSet<Integer> allPrimes = new HashSet<Integer>();
 		int i = 2;
 		while (number/i != 1) {
 			if (isPrimeNumber(i)) {
@@ -50,7 +50,7 @@ public class XOfAKindInADeckOfCards {
 
 		if (minCounter < 2) return false;
 
-		TreeSet<Integer> primesOfMinCounter = getAllPrimeDenominators(minCounter);
+		HashSet<Integer> primesOfMinCounter = getAllPrimeDenominators(minCounter);
 
 		for (int minPrimeDenominators: primesOfMinCounter) { 
 			boolean found = true;
