@@ -11,6 +11,7 @@ class LongestValidParenthesis {
 		//int lastResetIndex = 0;
 		int[] dp = new int[s.length()];
 		int currentLongestSubstringLength = 0;
+		
 
 		for (int i = 1; i < s.length(); i++) {
 				if (s.charAt(i) == ')') {
