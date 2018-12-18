@@ -1,9 +1,3 @@
-class ListNode {
-	int val;
-	ListNode next;
-	ListNode(int x) { val = x; }
-}
-
 /**
  * <a href = "https://leetcode.com/problems/reverse-linked-list/"> Problem here. </a>
  * @author Nubby
