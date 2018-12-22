@@ -5,6 +5,7 @@
  *
  */
 public class BackspaceStringCompare {
+	
 	public long convertStringToHash(String s) {
 		long out = 0;
 		long pow27 = 1;
