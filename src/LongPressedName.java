@@ -14,19 +14,24 @@ public class LongPressedName {
 		while (namedIndex < name.length() && typedIndex < typed.length()) {
 			if (name.charAt(namedIndex) != typed.charAt(typedIndex)) {
 				
-				if (namedIndex == 0) return false; 															//we are at beginning and we cant check previous symbol
+				//we are at beginning and we cant check previous symbol
+				if (namedIndex == 0) return false; 															
 				
-				if (name.charAt(namedIndex - 1) == typed.charAt(typedIndex)) 								//previous symbol matches, we can go further on string typed
+				//previous symbol matches, we can go further on string typed
+				if (name.charAt(namedIndex - 1) == typed.charAt(typedIndex)) 							
 					typedIndex++;
-				else 
-					return false;																			//if symbols dont match - clearly false output
+				else
+					//if symbols dont match - clearly false output
+					return false;																			
 				
 			} else 
-				namedIndex++; typedIndex++;																	//symbols matches, we go further on both strings
+				//symbols matches, we go further on both strings
+				namedIndex++; typedIndex++;																	
 			
 		}
-		
-		if (typedIndex < typed.length() && namedIndex == name.length()) 									//we have unchecked tail of typed string, checking it
+
+		//we have unchecked tail of typed string, checking it
+		if (typedIndex < typed.length() && namedIndex == name.length()) 							
 			while (typedIndex < typed.length() && typed.charAt(typedIndex) == name.charAt(namedIndex - 1)) 
 				typedIndex++;
 		

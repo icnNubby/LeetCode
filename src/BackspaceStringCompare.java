@@ -4,9 +4,11 @@
  * @author icnNubby
  *
  */
-public class BackspaceStringCompare {
-	
-	public long convertStringToHash(String s) {
+public class BackspaceStringCompare {  
+
+	//bad implementation, long is not big enough for conditions of the task
+
+	/*	public long convertStringToHash(String s) {
 		long out = 0;
 		long pow27 = 1;
 		int backspaces = 0;
@@ -27,12 +29,60 @@ public class BackspaceStringCompare {
 
 	public boolean backspaceCompare(String S, String T) {
 		return (convertStringToHash(S) == convertStringToHash(T));
+	}*/
+
+
+
+	public boolean backspaceCompare(String S, String T) {
+		int counterS = S.length() - 1;
+		int counterT = T.length() - 1;
+		int backspacesS = 0;
+		int backspacesT = 0;
+
+		while (true) {
+			char letterS = '!';
+			char letterT = '!';
+		
+			for (; counterS >= 0; counterS--) {
+				if (S.charAt(counterS) != '#') {
+					if (backspacesS == 0) {
+						letterS = S.charAt(counterS);
+						counterS--;						 // dont forget to move 1 symbol further
+						break;
+					} else 
+						backspacesS--;
+					
+				} else 
+					backspacesS++;
+			}
+
+			for (; counterT >= 0; counterT--) {
+				if (T.charAt(counterT) != '#') {
+					if (backspacesT == 0) {
+						letterT = T.charAt(counterT);
+						counterT--; 					// dont forget to move 1 symbol further
+						break;
+					} else 
+						backspacesT--;
+					
+				} else 
+					backspacesT++;
+			}
+
+			if (counterT == -1 && counterS == -1) 
+				if (letterS == letterT) 
+					return true;
+				else 
+					return false;
+			if (letterT != letterS) return false;
+		}	
 	}
-	
+
+
 	public static void main(String[] args) {
-		String S = "ab#c";
-		String T = "ad#c";
+		String S = "xywrrmp";
+		String T = "xywrrmu#p";
 		BackspaceStringCompare test = new BackspaceStringCompare();
-		System.out.println(test.backspaceCompare(S, T));
+		System.out.println(test.backspaceCompare(S, T));	//true
 	}
 }
