@@ -9,7 +9,8 @@ public class ValidMountainArray {
         boolean goingUp = true;
         for(int i = 1; i < A.length; i++) {
             if (goingUp) {
-                if (A[i] > A[i-1]) continue;
+                if (A[i] > A[i - 1]) {
+                }
                 else if (A[i] == A[i-1]) return false; 
                 else {
                     goingUp = false;
@@ -17,12 +18,13 @@ public class ValidMountainArray {
                     peekIndex = i - 1;
                 }
             } else {
-                if (A[i] < A[i-1]) continue;
+                if (A[i] < A[i - 1]) {
+                }
                 else if (A[i] == A[i-1]) return false; 
                 else return false;
             }
         }
-        if (peekIndex != 0) return true; else return false;
+        return peekIndex != 0;
     }
     
     public static void main(String[] args) {

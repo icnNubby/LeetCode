@@ -69,11 +69,8 @@ public class BackspaceStringCompare {
 					backspacesT++;
 			}
 
-			if (counterT == -1 && counterS == -1) 
-				if (letterS == letterT) 
-					return true;
-				else 
-					return false;
+			if (counterT == -1 && counterS == -1)
+				return letterS == letterT;
 			if (letterT != letterS) return false;
 		}	
 	}

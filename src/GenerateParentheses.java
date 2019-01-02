@@ -6,7 +6,7 @@ import java.util.List;
  */
 
 public class GenerateParentheses {
-    private List<String> allParentheses = new ArrayList<>();
+    private final List<String> allParentheses = new ArrayList<>();
 
     public static void main(String... args) {
         GenerateParentheses test = new GenerateParentheses();

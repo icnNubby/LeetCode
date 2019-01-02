@@ -13,8 +13,7 @@ public class SumRootToLeafNumbers {
             return;
         }
         byte[] newPath = new byte[path.length + 1];
-        for (int i = 0; i < path.length; i++)
-            newPath[i] = path[i];
+        System.arraycopy(path, 0, newPath, 0, path.length);
         newPath[path.length] = (byte) root.val;
         if (root.right != null) buildPath(root.right, newPath);
         if (root.left != null) buildPath(root.left, newPath);

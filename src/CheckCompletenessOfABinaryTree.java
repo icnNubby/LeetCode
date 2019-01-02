@@ -4,7 +4,7 @@
 public class CheckCompletenessOfABinaryTree {
 
     //100 maximum nodes (64 in row 5 + 36 at row 6) maximum 128 + 256 for next level, + 1  for head
-    private Integer[] treeArray = new Integer[385];
+    private final Integer[] treeArray = new Integer[385];
 
     private boolean treeToArray(TreeNode root, int deepLevel, int offset) {
         if (root != null) {
