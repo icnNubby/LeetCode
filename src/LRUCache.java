@@ -5,7 +5,7 @@ import java.util.HashMap;
  */
 public class LRUCache {
 
-    private HashMap<Integer, Node> hashMap;
+    private final HashMap<Integer, Node> hashMap;
     private Node head;
     private Node tail;
     private int size;
