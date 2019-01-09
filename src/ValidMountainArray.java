@@ -9,19 +9,14 @@ public class ValidMountainArray {
         boolean goingUp = true;
         for(int i = 1; i < A.length; i++) {
             if (goingUp) {
-                if (A[i] > A[i - 1]) {
-                }
-                else if (A[i] == A[i-1]) return false; 
-                else {
+                if (A[i] < A[i - 1]) {
                     goingUp = false;
-                    if (peekIndex != 0) return false;
                     peekIndex = i - 1;
                 }
-            } else {
-                if (A[i] < A[i - 1]) {
-                }
                 else if (A[i] == A[i-1]) return false; 
-                else return false;
+            } else {
+                if (A[i] > A[i - 1]) return false;
+                else if (A[i] == A[i - 1]) return false;
             }
         }
         return peekIndex != 0;
