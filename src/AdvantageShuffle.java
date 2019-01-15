@@ -1,5 +1,4 @@
 import java.util.Arrays;
-import java.util.Map;
 import java.util.TreeMap;
 
 /**
@@ -21,10 +20,8 @@ public class AdvantageShuffle {
         int[] outputArray = new int[B.length];
         int i = 0;
         for (int bElem : B) {
-            Map.Entry<Integer, Integer> ceilingEntry = bToTree.ceilingEntry(bElem);
-            Integer ceiling;
-            if (ceilingEntry != null) {
-                ceiling = bToTree.ceilingEntry(bElem).getKey();
+            Integer ceiling = bToTree.ceilingKey(bElem);
+            if (ceiling != null) {
                 if (ceiling == bElem) {
                     ceiling = bToTree.higherKey(bElem);
                     if (ceiling == null) {
@@ -39,7 +36,7 @@ public class AdvantageShuffle {
                 bToTree.put(ceiling, bToTree.get(ceiling) - 1);
                 if (bToTree.get(ceiling) == 0) bToTree.remove(ceiling);
             } else {
-                System.out.println("Bad thing happened!");
+                System.out.println("Bad thing happened! Probably incorrect input.");
             }
             i++;
         }

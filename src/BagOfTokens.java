@@ -15,21 +15,21 @@ public class BagOfTokens {
     	int lowest = tokens[0];
     	if (P < lowest) return 0;
     	P -= lowest; points++;
-		int highestPointer = tokens.length - 1;
-		int lowestPointer = 1;
+        int hPointer = tokens.length - 1;
+        int lPointer = 1;
 		
  	
     	while(!changed){
-    		if (tokens[lowestPointer] > P && points == 0) break;
-    		if (tokens[lowestPointer] <= P) {
+            if (tokens[lPointer] > P && points == 0) break;
+            if (tokens[lPointer] <= P) {
     			points++;
-    			P -= tokens[lowestPointer];
-    			lowestPointer++;
+                P -= tokens[lPointer];
+                lPointer++;
     			continue;
     		}
-    		if (tokens[lowestPointer] > P && points > 0 && highestPointer - lowestPointer >= 2) {
-    			P += tokens[highestPointer];
-    			highestPointer--;
+            if (tokens[lPointer] > P && points > 0 && hPointer - lPointer >= 2) {
+                P += tokens[hPointer];
+                hPointer--;
     			points--;
     			continue;
     		} 
