@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -16,22 +17,14 @@ public class UncommonWordsFromTwoSentences {
     }
 
     public String[] uncommonFromSentences(String A, String B) {
-        List<String> splittedAB = new ArrayList<>(Arrays.asList((A + " " + B).split(" ")));
-        List<String> out = new ArrayList<>();
-        while (splittedAB.size() > 0) {
-            String copy = splittedAB.get(0);
-            splittedAB.remove(copy);
-            if (splittedAB.indexOf(copy) >= 0) {
-                while (splittedAB.indexOf(copy) >= 0)
-                    splittedAB.remove(copy);
-            } else {
-                out.add(copy);
-            }
+        HashMap<String, Integer> splittedAB = new HashMap<>();
+        for (String item : (A + " " + B).split(" ")) {
+            splittedAB.put(item, splittedAB.getOrDefault(item, 0) + 1);
         }
+        List<String> out = new ArrayList<>();
+        for (String item : splittedAB.keySet())
+            if (splittedAB.get(item) == 1) out.add(item);
 
-        String[] outArr = new String[out.size()];
-        for (int i = 0; i < out.size(); i++)
-            outArr[i] = out.get(i);
-        return outArr;
+        return out.toArray(new String[0]);
     }
 }
