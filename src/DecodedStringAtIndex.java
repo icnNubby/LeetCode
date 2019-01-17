@@ -8,11 +8,11 @@ public class DecodedStringAtIndex {
 
     public static void main(String[] args) {
         DecodedStringAtIndex test = new DecodedStringAtIndex();
-        System.out.println(test.decodeAtIndex("abc3", 6)); // c
-        System.out.println(test.decodeAtIndex("a23", 6)); // a
-        System.out.println(test.decodeAtIndex("leet2code3", 10)); // o
-        System.out.println(test.decodeAtIndex("ha22", 5)); // h
-        System.out.println(test.decodeAtIndex("a2345678999999999999999", 1)); // a
+        System.out.println(test.decodeAtIndex("abc3", 6));                      // c
+        System.out.println(test.decodeAtIndex("a23", 6));                       // a
+        System.out.println(test.decodeAtIndex("leet2code3", 10));               // o
+        System.out.println(test.decodeAtIndex("ha22", 5));                      // h
+        System.out.println(test.decodeAtIndex("a2345678999999999999999", 1));   // a
     }
 
     private DecodedString decodeToLinkedList(String S) {
