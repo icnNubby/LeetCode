@@ -17,7 +17,7 @@ public class RestoreIpAdress {
     }
 
     private boolean checkSingleIfValid(String s) {
-        return (Integer.valueOf(s) <= 255);
+        return (Integer.valueOf(s) <= 255 && s.length() == Integer.valueOf(s).toString().length());
     }
 
     private String checkIfValid(String s, int l1, int l2, int l3) {
@@ -27,7 +27,7 @@ public class RestoreIpAdress {
         String s4 = s.substring(l1 + l2 + l3);
         String out = "";
         if (checkSingleIfValid(s1) && checkSingleIfValid(s2) && checkSingleIfValid(s3) && checkSingleIfValid(s4)) {
-            out = Integer.valueOf(s1) + "." + Integer.valueOf(s2) + "." + Integer.valueOf(s3) + "." + Integer.valueOf(s4);
+            out = s1 + "." + s2 + "." + s3 + "." + s4;
         }
         return out;
     }
@@ -35,7 +35,7 @@ public class RestoreIpAdress {
     public List<String> restoreIpAddresses(String s) {
         Set<String> ipAdresses = new HashSet<>();
         List<String> ipAdressesList = new ArrayList<>();
-        if (s.length() > 12 || s.length() < 4) return null;
+        if (s.length() > 12 || s.length() < 4) return ipAdressesList;
         int[] lens = new int[4];
 
         for (int i1 = 1; i1 <= 3; i1++)
