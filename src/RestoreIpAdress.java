@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-//TODO trailing zero problems
 
 /**
  * <a href = "https://leetcode.com/problems/restore-ip-addresses/"></a>

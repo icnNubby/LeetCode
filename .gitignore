@@ -2,3 +2,5 @@
 .idea
 .settings
 LeetCode.iml
+.project
+.classpath
