@@ -16,8 +16,8 @@ public class IslandPerimeter {
             }
         return perimeter;
     }
-    
-    //Test
+
+    //YandexTestFunny
     public static void main(String[] args) {
     	int[][] A  = {	{0,1,0,0},
     					{1,1,1,0},
