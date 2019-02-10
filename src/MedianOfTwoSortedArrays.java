@@ -12,7 +12,7 @@ public class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] A, int[] B) {
         int m = A.length;
         int n = B.length;
-        if (m > n) { // to ensure m<=n
+        if (m > n) { // to ensure m < =n
             int[] temp = A;
             A = B;
             B = temp;
