@@ -1,7 +1,7 @@
 /**
  * <a href = "https://leetcode.com/problems/long-pressed-name/"> Problem here. </a> 
- * 
- *  * @author Nubby 
+ *
+ *  @author Nubby
  * */
 
 
