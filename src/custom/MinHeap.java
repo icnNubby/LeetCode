@@ -43,9 +43,6 @@ public class MinHeap {
     private void sink(int index) {
         int leftIndex = index * 2;
         int rightIndex = index * 2 + 1;
-        //compare index and leftIndex and rightIndex
-        //swap index with minimum(leftIndex, rightIndex);
-        //3 elements: 0, 1, 2, 3 index = 1 size = 4
         int leftChild;
         int rightChild;
 

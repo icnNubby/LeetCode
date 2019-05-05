@@ -7,6 +7,7 @@ import java.util.Random;
  * Created by NubbY
  */
 public class KthStatistics {
+    //todo fix
 
     /*
      L++ -> until arr[L] < arr[pivot]
@@ -15,7 +16,7 @@ public class KthStatistics {
 
     public static void main(String[] args) {
         KthStatistics test = new KthStatistics();
-        int[] testArr = new int[]{5, 3, 2, 10, 12, 15, 30, -2, 0, 0};
+        int[] testArr = new int[]{5, 3, 2, 10, 12, 15, 30, -2, 0};
         for (int k = 0; k < testArr.length; k++) {
             test.shuffle(testArr);
             System.out.println(Arrays.toString(testArr));
