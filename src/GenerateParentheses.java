@@ -10,7 +10,7 @@ public class GenerateParentheses {
 
     public static void main(String... args) {
         GenerateParentheses test = new GenerateParentheses();
-        List<String> testList = test.generateParenthesis(2);
+        List<String> testList = test.generateParenthesis(5);
         for (String str : testList) System.out.println(str);
     }
 
