@@ -6,8 +6,8 @@ import java.util.List;
 /**
  * Created by NubbY
  */
-public class MinHeap {
-    List<Integer> store = new ArrayList<>();
+public class MinHeap implements Heap {
+    private List<Integer> store = new ArrayList<>();
 
     public MinHeap() {
         //blocking store[0] for better readability
@@ -15,12 +15,13 @@ public class MinHeap {
     }
 
     public int pop() {
-        if (store.size() == 1) {
+        if (isEmpty()) {
             throw new IndexOutOfBoundsException("Heap size is less than 0");
         }
         int out = store.get(1);
         store.set(1, store.get(store.size() - 1));
         sink(1);
+        store.remove(store.size() - 1);
         return out;
     }
 
@@ -30,44 +31,34 @@ public class MinHeap {
         swim(store.size() - 1);
     }
 
+    @Override
+    public boolean isEmpty() {
+        return store.size() == 1;
+    }
+
     private void swim(int index) {
-        if (index == 1) return;
-        if (store.get(index) < store.get(index / 2)) {
-            int tmp = store.get(index);
-            store.set(index, store.get(index / 2));
-            store.set(index / 2, tmp);
-            swim(index / 2);
+        while (index > 1 && store.get(index) < store.get(index / 2)) {
+            swap(index, index / 2);
+            index = index / 2;
         }
     }
 
     private void sink(int index) {
-        int leftIndex = index * 2;
-        int rightIndex = index * 2 + 1;
-        int leftChild;
-        int rightChild;
+        int n = store.size() - 1;
+        while (2 * index <= n) {
+            int j = 2 * index;
+            if (j < n && store.get(j) > store.get(j + 1)) j++;
+            if (!(store.get(index) <= store.get(j))) break;
+            swap(index, j);
+            index = j;
+        }
+    }
 
-        if (store.size() <= leftIndex) {
-            return;
-        } else {
-            leftChild = store.get(leftIndex);
-        }
-        if (store.size() <= rightIndex) {
-            int tmp = store.get(index);
-            store.set(index, store.get(leftIndex));
-            store.set(leftIndex, tmp);
-        } else {
-            rightChild = store.get(rightIndex);
-            if (rightChild > leftChild) {
-                int tmp = store.get(index);
-                store.set(index, store.get(leftIndex));
-                store.set(leftIndex, tmp);
-                sink(leftIndex);
-            } else {
-                int tmp = store.get(index);
-                store.set(index, store.get(rightIndex));
-                store.set(rightIndex, tmp);
-                sink(rightIndex);
-            }
-        }
+    private void swap(int index1, int index2) {
+        int value1 = store.get(index1);
+        int value2 = store.get(index2);
+
+        store.set(index1, value2);
+        store.set(index2, value1);
     }
 }

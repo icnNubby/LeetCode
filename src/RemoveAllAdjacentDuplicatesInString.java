@@ -27,15 +27,15 @@ public class RemoveAllAdjacentDuplicatesInString {
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < S.length(); i++) {
             Character currentCharacter = S.charAt(i);
-            if (!stack.isEmpty()) {
-                Character topCharacter = stack.peek();
-                if (topCharacter.equals(currentCharacter)) {
-                    stack.pop();
-                } else {
-                    stack.push(currentCharacter);
-                }
-            } else {
+            if (stack.isEmpty()) {
                 stack.push(currentCharacter);
+            } else {
+                Character topCharacter = stack.peek();
+                if (!topCharacter.equals(currentCharacter)) {
+                    stack.push(currentCharacter);
+                } else {
+                    stack.pop();
+                }
             }
         }
         return makeStringFromStack(stack);
